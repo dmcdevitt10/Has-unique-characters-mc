@@ -1,8 +1,14 @@
 // Write your code below
-function uniqueLetters(word){
-    if(word.includes('on')){
-        return true
-    }else{return false}
+function uniqueLetters(string){
+    let word = string.split('');
+    for(i = 0; i < word.length; i++){
+        for(let j = 0; j < word.length; j++){
+            if(i !== j && word[i] === word[j]){
+                return false
+            }
+        }
+    }
+    return true
 }
-let newVar = uniqueLetters('Monday')
-console.log(newVar)
+
+console.log(uniqueLetters('Monday'))
